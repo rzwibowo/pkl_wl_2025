@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{judul}}</h1>
+
+        <input type="text" v-model="judul">
+        
+        <hr>
+
+        <b>Isikan angka</b>
+        <input type="number" v-model="angka1"> + 
+        <input type="number" v-model="angka2">
+        <br>
+        <b>Hasilnya</b>
+        <p>{{ parseInt(angka1) + parseInt(angka2) }}</p>
+
+        <hr>
+
+        <b>Daftar Menu</b>
+        <ul>
+            <li v-for="menu in daftarMenu">{{menu}}</li>
+        </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    judul: "Kalkulator Sederhana",
+                    angka1: 0,
+                    angka2: 0,
+                    daftarMenu: [
+                        "Lontong",
+                        "Nasi Goreng",
+                        "Sate",
+                        "Es Teh"
+                    ]
+                }
+            }
+        })
+    </script>
+</body>
+</html>

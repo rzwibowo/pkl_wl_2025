@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>latihan javascript</title>
+
+    <style>
+        td, th {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="judul">Latihan</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Nama</th>
+                <th>Berat</th>
+            </tr>
+        </thead>
+        <tbody id="dataBuah"></tbody>
+    </table>
+
+    <script>
+        const elementJudul = document.getElementById('judul');
+        
+        elementJudul.innerHTML = "Latihan JavaScript";
+
+        const dataBuah = [
+            { no: 1, nama: "Apel", berat: "200 gram" },
+            { no: 2, nama: "Jeruk", berat: "150 gram" },
+            { no: 3, nama: "Mangga", berat: "300 gram" }
+        ];
+
+        const elementDataBuah = document.getElementById('dataBuah');
+
+        dataBuah.forEach(buah => {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${buah.no}</td><td>${buah.nama}</td><td>${buah.berat}</td>`;
+            elementDataBuah.appendChild(row);
+        });
+    </script>
+</body>
+</html>
